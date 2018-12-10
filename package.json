@@ -1,0 +1,32 @@
+{
+  "name": "megalo-api-patch",
+  "version": "0.0.1",
+  "description": "在 megalo 中使用统一的小程序 API 写法",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "watch": "babel src -d dist -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geminate/megalo-api-patch.git"
+  },
+  "keywords": [
+    "megalo",
+    "api",
+    "mini-programe"
+  ],
+  "author": "geminate",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/geminate/megalo-api-patch/issues"
+  },
+  "homepage": "https://github.com/geminate/megalo-api-patch#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1"
+  }
+}
