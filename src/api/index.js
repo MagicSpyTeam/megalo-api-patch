@@ -1,12 +1,15 @@
 import net from './net';
+import inter from './interface';
 
 const apiMixin = {};
 const platform = "wechat";
 
 const apiMixinFun = (platform) => {
 
-    Object.keys(net).forEach((key) => {
-        apiMixin[key] = (...param) => net[key](...param, platform);
+    const apiObj = Object.assign({}, net, inter);
+
+    Object.keys(apiObj).forEach((key) => {
+        apiMixin[key] = (...param) => apiObj[key](...param, platform);
     });
 
     return apiMixin;
