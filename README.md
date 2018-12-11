@@ -25,8 +25,8 @@ Vue.use(MegaloApiPatch)
 - [x] request
 
 #### 上传、下载
-- [ ] uploadFile
-- [ ] downloadFile
+- [x] uploadFile
+- [x] downloadFile
 
 #### WebSocket
 - [ ] connectSocket
@@ -39,7 +39,7 @@ Vue.use(MegaloApiPatch)
 
 ### 媒体
 #### 图片
-- [ ] chooseImage
+- [x] chooseImage
 - [ ] previewImage
 - [ ] getImageInfo
 - [ ] saveImageToPhotosAlbum
@@ -79,7 +79,7 @@ Vue.use(MegaloApiPatch)
 - [ ] createVideoContext
 
 #### 相机组件控制
-- [ ] createCameraContext
+- [x] createCameraContext
 
 ### 文件
 - [ ] saveFile
@@ -90,20 +90,20 @@ Vue.use(MegaloApiPatch)
 - [ ] openDocument
 
 ### 数据缓存
-- [ ] setStorage
-- [ ] setStorageSync
-- [ ] getStorage
-- [ ] getStorageSync
-- [ ] getStorageInfo
-- [ ] getStorageInfoSync
-- [ ] removeStorage
-- [ ] removeStorageSync
-- [ ] clearStorage
-- [ ] clearStorageSync
+- [x] setStorage
+- [x] setStorageSync
+- [x] getStorage
+- [x] getStorageSync
+- [x] getStorageInfo
+- [x] getStorageInfoSync
+- [x] removeStorage
+- [x] removeStorageSync
+- [x] clearStorage
+- [x] clearStorageSync
 
 ### 位置
 #### 获取位置
-- [ ] getLocation
+- [x] getLocation
 - [ ] chooseLocation
 
 #### 查看位置
@@ -114,8 +114,8 @@ Vue.use(MegaloApiPatch)
 
 ### 设备
 #### 系统信息
-- [ ] getSystemInfo
-- [ ] getSystemInfoSync
+- [x] getSystemInfo
+- [x] getSystemInfoSync
 - [ ] canIUse
 
 #### 网络状态
@@ -211,10 +211,11 @@ Vue.use(MegaloApiPatch)
 - [ ] showActionSheet
 
 #### 设置导航条
-- [ ] setNavigationBarTitle
+- [x] setNavigationBar
+- [x] setNavigationBarTitle
 - [ ] showNavigationBarLoading
 - [ ] hideNavigationBarLoading
-- [ ] setNavigationBarColor
+- [x] setNavigationBarColor
 
 #### 设置 tabBar
 - [ ] setTabBarBadge

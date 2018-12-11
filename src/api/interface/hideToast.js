@@ -1,7 +1,16 @@
-const hideToast = (param, platform = 'wechat') => {
-    (platform == 'wechat') && wx.hideToast(param);
-    (platform == 'swan') && swan.hideToast(param);
-    (platform == 'alipay') && my.hideToast(param);
+/**
+ * 隐藏弱提示
+ */
+const hideToast = (platform = 'wechat') => {
+    if (platform == 'wechat') {
+        return wx.hideToast();
+    }
+    if (platform == 'swan') {
+        return swan.hideToast();
+    }
+    if (platform == 'alipay') {
+        return my.hideToast();
+    }
 };
 
-export {hideToast}
+export default hideToast;
