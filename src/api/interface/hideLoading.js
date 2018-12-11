@@ -1,7 +1,7 @@
-const hideLoading = (param, platform = 'wechat') => {
-    (platform == 'wechat') && wx.hideLoading(param);
-    (platform == 'swan') && swan.hideLoading(param);
-    (platform == 'alipay') && my.hideLoading(param);
+const hideLoading = (page, platform = 'wechat') => {
+    (platform == 'wechat') && wx.hideLoading();
+    (platform == 'swan') && swan.hideLoading();
+    (platform == 'alipay') && my.hideLoading(page);
 };
 
 export {hideLoading}

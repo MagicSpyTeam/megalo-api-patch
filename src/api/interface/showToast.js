@@ -1,7 +1,13 @@
-const showToast = (param, platform = 'wechat') => {
-    (platform == 'wechat') && wx.showToast(param);
-    (platform == 'swan') && swan.showToast(param);
-    (platform == 'alipay') && my.showToast(param);
+const showToast = ({title, type, icon, image, duration, success, fail, complete, mask}, platform = 'wechat') => {
+    (platform == 'wechat') && wx.showToast({
+        title, icon, image, duration, success, fail, complete, mask
+    });
+    (platform == 'swan') && swan.showToast({
+        title, icon, image, duration, success, fail, complete, mask
+    });
+    (platform == 'alipay') && my.showToast({
+        content: title, type, duration, success, fail, complete
+    });
 };
 
 export {showToast}
