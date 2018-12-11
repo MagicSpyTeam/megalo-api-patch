@@ -18,10 +18,7 @@ const apiPatch = {
         };
 
         Vue.mixin({
-            onShow() {
-                handleMixin(this);
-            },
-            created() {
+            beforeCreate() {
                 handleMixin(this);
             }
         });
