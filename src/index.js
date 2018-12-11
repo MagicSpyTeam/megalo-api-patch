@@ -2,7 +2,7 @@ import apiMixin from './api';
 
 let _Vue;
 
-const routerPatch = {
+const apiPatch = {
     install(Vue, options) {
 
         if (this.installed && _Vue === Vue) return;
@@ -35,4 +35,4 @@ const routerPatch = {
 };
 
 
-export default routerPatch;
+export default apiPatch;
