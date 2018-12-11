@@ -18,6 +18,11 @@ import MegaloApiPatch from 'megalo-api-patch'
 Vue.use(MegaloApiPatch)
 ```
 
+```js
+// Page.vue
+this.$api.[apiName]
+```
+
 ## TODO
 
 ### 网络
