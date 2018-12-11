@@ -2,7 +2,7 @@
 > 在 [megalo](https://github.com/kaola-fed/megalo) 中使用统一的小程序 API 写法, 可自动转换为对应小程序的API写法。
 
 ## 开发中...
-![Progress](http://progressed.io/bar/15.6?title=26%2F166)
+![Progress](http://progressed.io/bar/16?title=26%2F166)
 
 ## 安装
 ``` bash
