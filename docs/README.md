@@ -334,6 +334,41 @@ clearStorage 的同步版本
 ### 系统信息
 
 #### getSystemInfo
+获取系统信息
+
+``` this.$api.getSystemInfo(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| success         | function  | 否        | 接口调用成功的回调函数 | |
+| fail            | function  | 否        | 接口调用失败的回调函数 | |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | |
+
+**success 返回：**
+
+| 属性            | 类型       | 说明 | 多端差异 |
+| ------          | ------    | ------ | ------ |
+| brand           | string    | 手机品牌 |  |
+| model           | string    | 手机型号 |  |
+| pixelRatio      | number    | 设备像素比 |  |
+| screenWidth     | number    | 屏幕宽度 |  |
+| screenHeight    | number    | 屏幕高度 |  |
+| windowWidth     | number    | 可使用窗口宽度 |  |
+| windowHeight    | number    | 可使用窗口高度 |  |
+| statusBarHeight | number    | 状态栏的高度 | 支付宝不支持 |
+| language        | string    | 三端设置的语言 |  |
+| version         | string    | 三端版本号 |  |
+| system          | string    | 操作系统版本 |  |
+| platform        | string    | 客户端平台 |  |
+| fontSizeSetting | number    | 用户字体大小设置 |  |
+| SDKVersion      | string    | 客户端基础库版本 | 支付宝不支持 |
+| benchmarkLevel  | number    | 性能等级 | 百度、支付宝不支持 |
+| storage         | String    | 设备磁盘容量 | 微信、百度不支持 |
+| currentBattery  | String    | 当前电量百分比 | 微信、百度不支持 |
+| app             | String    | 当前运行的客户端，当前是支付宝则有效值是"alipay" | 微信、百度不支持 |
+
 ---
 
 #### getSystemInfoSync
