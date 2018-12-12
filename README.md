@@ -23,6 +23,9 @@ Vue.use(MegaloApiPatch)
 this.$api.[apiName]
 ```
 
+## API 文档
+[API 文档](https://magicspyteam.github.io/megalo-api-patch/)
+
 ## TODO
 
 ### 网络
