@@ -1,12 +1,9 @@
-# megalo-api-patch
-> 在 [megalo](https://github.com/kaola-fed/megalo) 中使用统一的小程序 API 写法, 可自动转换为对应小程序的API写法。
-
-## 安装
+# 安装
 ``` bash
 npm i megalo-api-patch
 ```
 
-## 使用
+# 使用
 ``` bash
 // main.js
 import Vue from 'vue'
@@ -20,12 +17,13 @@ Vue.use(MegaloApiPatch)
 this.$api.[apiName]
 ```
 
-## API
-#### 请求
-##### request
+# API
+## 网络
+### 请求
+#### request
 发起 HTTPS 网络请求
 
-``` this.$api.request(obj) ```
+``` this.$api.request(Object object) ```
 
 **obj 入参：**
 
@@ -52,11 +50,11 @@ this.$api.[apiName]
 
 ---
 
-#### 上传、下载
-##### uploadFile
+### 上传、下载
+#### uploadFile
 将本地资源上传到服务器
 
-``` this.$api.uploadFile(obj) ```
+``` this.$api.uploadFile(Object object) ```
 
 **obj 入参：**
 
@@ -82,7 +80,7 @@ this.$api.[apiName]
 
 ---
 
-##### downloadFile
+#### downloadFile
 下载文件资源到本地
 
 ``` this.$api.uploadFile(obj) ```
@@ -106,3 +104,81 @@ this.$api.[apiName]
 | statusCode      | number    | 开发者服务器返回的 HTTP 状态码 | 支付宝不支持 |
 
 ---
+
+## 媒体
+### 图片
+#### chooseImage
+从本地相册选择图片或使用相机拍照
+
+``` this.$api.chooseImage(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| count           | number    | 否        | 最多可以选择的图片张数 | |
+| sizeType        | Array     | 否        | 所选的图片的尺寸 | |
+| sourceType	  | Array     | 否        | 选择图片的来源 | |
+| success         | function  | 否        | 接口调用成功的回调函数 | |
+| fail            | function  | 否        | 接口调用失败的回调函数 | |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | |
+
+**success 返回：**
+
+| 属性            | 类型       | 说明 | 多端差异 |
+| ------          | ------    | ------ | ------ |
+| tempFilePaths   | Array     | 图片的本地文件路径列表 | |
+| tempFiles       | Array     | 图片的本地文件列表，每一项是一个 File 对象 | 支付宝不支持 |
+
+---
+
+### 相机组件控制
+#### createCameraContext
+
+## 数据缓存
+### Storage
+#### setStorage
+#### setStorageSync
+#### getStorage
+#### getStorageSync
+#### getStorageInfo
+#### getStorageInfoSync
+#### removeStorage
+#### removeStorageSync
+#### clearStorage
+#### clearStorageSync
+
+## 位置
+### 获取位置
+#### getLocation
+
+## 设备
+### 系统信息
+#### getSystemInfo
+#### getSystemInfoSync
+
+### 拨打电话
+#### makePhoneCall
+
+### 扫码
+#### scanCode
+
+## 界面
+### 交互反馈
+#### showToast
+#### showLoading
+#### hideToast
+#### hideLoading
+#### showModal
+
+### 设置导航条
+#### setNavigationBar
+#### setNavigationBarTitle
+#### setNavigationBarColor
+
+### 位置
+#### pageScrollTo
+
+## 开放接口
+### 登录
+#### login
