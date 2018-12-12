@@ -1,0 +1,58 @@
+# megalo-api-patch
+> 在 [megalo](https://github.com/kaola-fed/megalo) 中使用统一的小程序 API 写法, 可自动转换为对应小程序的API写法。
+
+## 安装
+``` bash
+npm i megalo-api-patch
+```
+
+## 使用
+``` bash
+// main.js
+import Vue from 'vue'
+import MegaloApiPatch from 'megalo-api-patch'
+
+Vue.use(MegaloApiPatch)
+```
+
+```js
+// Page.vue
+this.$api.[apiName]
+```
+
+## API
+#### 请求
+##### request
+发起 HTTPS 网络请求
+
+```this.$api.request(obj)```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填    | 说明 | 多端差异 |
+| ------          | ------    | ------ | ------ | ------ |
+| url             | string    | 是     | 地址 | |
+| data            | object    | 否     | 请求的参数 | |
+| header          | Object    | 否     | 请求的 header | |
+| method          | string    | 否     | HTTP 请求方法 | |
+| timeout         | Number    | 否     | 超时时间，单位ms，默认30000 | 微信、百度 不支持 |
+| dataType        | string    | 否     | 返回的数据格式 | |
+| responseType    | string    | 否     | 响应的数据类型 | 支付宝 不支持|
+| success         | function  | 否     | 接口调用成功的回调函数 | |
+| fail            | function  | 否     | 接口调用失败的回调函数 | |
+| complete        | function  | 否     | 接口调用结束的回调函数（调用成功、失败都会执行） | |
+
+**success 返回：**
+
+| 属性            | 类型       | 说明 | 多端差异 |
+| ------          | ------    | ------ | ------ |
+| data            |           | 服务器返回的数据 | |
+| statusCode      | number    | 服务器返回的 HTTP 状态码 | |
+| header          | Object    | 服务器返回的 HTTP Response Header | |
+
+---
+
+#### 上传、下载
+##### uploadFile
+
+##### downloadFile
