@@ -134,6 +134,15 @@ this.$api.[apiName]
 
 ### 相机组件控制
 #### createCameraContext
+创建 camera 上下文 CameraContext 对象**（支付宝小程序不支持）**
+
+``` this.$api.createCameraContext() ```
+
+**返回值：**
+
+CameraContext
+
+---
 
 ## 数据缓存
 ### Storage
