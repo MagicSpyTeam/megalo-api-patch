@@ -24,13 +24,17 @@ const scanCode = ({onlyFromCamera, scanType, success, fail, complete}, platform 
 
     if (platform == 'alipay') {
         if (scanType && scanType.length > 0) {
-            const type = scanType[0];
+            const type = (scanType[0] == "barCode" ? "bar" : "qr");
         }
 
         return my.scan(dealObjectValue({
             type: type,
             hideAlbum: onlyFromCamera,
-            success,
+            success: ({code}) => {
+                success(dealObjectValue({
+                    result: code
+                }));
+            },
             fail,
             complete
         }));

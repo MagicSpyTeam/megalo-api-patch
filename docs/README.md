@@ -399,12 +399,37 @@ getSystemInfo 的同步版本
 ### 扫码
 
 #### scanCode
+调起客户端扫码界面进行扫码
+
+``` this.$api.scanCode(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| onlyFromCamera  | boolean   | 否        | 是否只能从相机扫码，不允许从相册选择图片	 | 百度不支持 |
+| scanType        | Array     | 否        | 扫码类型 (barCode 或 qrCode) | 百度不支持,支付宝只会对数组中第一个生效 |
+| success         | function  | 否        | 接口调用成功的回调函数 | |
+| fail            | function  | 否        | 接口调用失败的回调函数 | |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | |
+
+**success 返回：**
+
+| 属性            | 类型       | 说明 | 多端差异 |
+| ------          | ------    | ------ | ------ |
+| result          | string    | 所扫码的内容 | |
+| scanType        | string    | 所扫码的类型 | 支付宝不支持 |
+| charSet         | string    | 所扫码的字符集 | 支付宝不支持 |
+| path            | string    | 当所扫的码为当前小程序的合法二维码时，会返回此字段，内容为二维码携带的 path | 百度、支付宝不支持 |
+| rawData         | string    | 原始数据，base64编码 | 百度、支付宝不支持 |
+
 ---
 
 ## 界面
 ### 交互反馈
 
 #### showToast
+
 ---
 
 #### showLoading
