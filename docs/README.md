@@ -147,15 +147,145 @@ CameraContext
 ## 数据缓存
 ### Storage
 #### setStorage
+将数据存储在本地缓存中指定的 key 中
+
+``` this.$api.setStorage(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| key             | string    | 是        | 本地缓存中指定的 key | |
+| data            |           | 是        | 需要存储的内容 | |
+| success         | function  | 否        | 接口调用成功的回调函数 | |
+| fail            | function  | 否        | 接口调用失败的回调函数 | |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | |
+
+---
 #### setStorageSync
+setStorage 的同步版本
+
+``` this.$api.setStorage(string key, any data) ```
+
+**入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| key             | string    | 是        | 本地缓存中指定的 key | |
+| data            |           | 是        | 需要存储的内容 | |
+
+---
 #### getStorage
+从本地缓存中异步获取指定 key 的内容
+
+``` this.$api.getStorage(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| key             | string    | 是        | 本地缓存中指定的 key | |
+| success         | function  | 否        | 接口调用成功的回调函数 | |
+| fail            | function  | 否        | 接口调用失败的回调函数 | |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | |
+
+---
 #### getStorageSync
+getStorage 的同步版本
+
+``` this.$api.setStorage(string key) ```
+
+**入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| key             | string    | 是        | 本地缓存中指定的 key | |
+
+---
 #### getStorageInfo
+异步获取当前storage的相关信息
+
+``` this.$api.getStorageInfo(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| success         | function  | 否        | 接口调用成功的回调函数 | |
+| fail            | function  | 否        | 接口调用失败的回调函数 | |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | |
+
+**success 返回：**
+
+| 属性            | 类型       | 说明 | 多端差异 |
+| ------          | ------    | ------ | ------ |
+| keys            | Array     | 当前 storage 中所有的 key | |
+| currentSize     | number    | 当前占用的空间大小, 单位 KB |  |
+| limitSize       | number    | 限制的空间大小，单位 KB |  |
+
+---
 #### getStorageInfoSync
+getStorageInfo 的同步版本
+
+``` this.$api.getStorageInfoSync() ```
+
+**返回：**
+
+| 属性            | 类型       | 说明 | 多端差异 |
+| ------          | ------    | ------ | ------ |
+| keys            | Array     | 当前 storage 中所有的 key | |
+| currentSize     | number    | 当前占用的空间大小, 单位 KB |  |
+| limitSize       | number    | 限制的空间大小，单位 KB |  |
+
+---
 #### removeStorage
+从本地缓存中移除指定 key
+
+``` this.$api.removeStorage(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| key             | string    | 是        | 本地缓存中指定的 key | |
+| success         | function  | 否        | 接口调用成功的回调函数 | |
+| fail            | function  | 否        | 接口调用失败的回调函数 | |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | |
+
+---
+
 #### removeStorageSync
+removeStorage 的同步版本
+
+``` this.$api.removeStorageSync(string key) ```
+
+**入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| key             | string    | 是        | 本地缓存中指定的 key | |
+
+---
 #### clearStorage
+清理本地数据缓存
+
+``` this.$api.removeStorage(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| success         | function  | 否        | 接口调用成功的回调函数 | |
+| fail            | function  | 否        | 接口调用失败的回调函数 | |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | |
+
+---
 #### clearStorageSync
+clearStorage 的同步版本
+
+``` this.$api.clearStorageSync() ```
+
+---
 
 ## 位置
 ### 获取位置
