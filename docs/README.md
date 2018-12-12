@@ -468,12 +468,44 @@ getSystemInfo 的同步版本
 ---
 
 #### hideToast
+隐藏消息提示框
+
+``` this.$api.hideToast() ```
 ---
 
 #### hideLoading
+隐藏 loading 提示框
+
+``` this.$api.hideLoading() ```
 ---
 
 #### showModal
+显示模态对话框
+
+``` this.$api.showModal(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| title           | string    | 是        | 提示的标题 | |
+| content         | string    | 是        | 提示的内容 | |
+| showCancel      | boolean   | 否        | 是否显示取消按钮 | 支付宝不支持 |
+| cancelText      | string    | 否        | 取消按钮的文字 | |
+| cancelColor     | string    | 否        | 取消按钮的文字颜色 | 支付宝不支持 |
+| confirmText     | string    | 否        | 确认按钮的文字 | |
+| confirmColor    | string    | 否        | 确认按钮的文字颜色 | 支付宝不支持 |
+| success         | function  | 否        | 接口调用成功的回调函数 | |
+| fail            | function  | 否        | 接口调用失败的回调函数 | |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | |
+
+**success 返回：**
+
+| 属性            | 类型       | 说明 | 多端差异 |
+| ------          | ------    | ------ | ------ |
+| confirm         | boolean   | 为 true 时，表示用户点击了确定按钮 | |
+| cancel          | boolean   | 为 true 时，表示用户点击了取消 |  |
+
 ---
 
 ### 设置导航条

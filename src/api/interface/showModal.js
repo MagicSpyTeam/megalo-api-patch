@@ -44,7 +44,12 @@ const showModal = ({title, content, showCancel, cancelText, cancelColor, confirm
             content,
             confirmButtonText: confirmText,
             cancelButtonText: cancelText,
-            success,
+            success: ({confirm}) => {
+                success(dealObjectValue({
+                    confirm: confirm == true,
+                    cancel: confirm == false
+                }));
+            },
             fail,
             complete
         }));
