@@ -66,7 +66,7 @@ this.$api.[apiName]
 | filePath        | string    | 是        | 要上传文件资源的路径 | |
 | name            | string    | 是        | 文件对应的 key，开发者在服务端可以通过这个 key 获取文件的二进制内容 | |
 | fileType        | string    | 是(支付宝) | 文件类型，image / video / audio | 微信、百度不支持 |
-| header          | Object    | 否        | HTTP 请求 Header，Header 中不能设置 Referer | |
+| header          | Object    | 否        | HTTP 请求 Header | |
 | formData        | Object    | 否        | HTTP 请求中其他额外的 form data | |
 | success         | function  | 否        | 接口调用成功的回调函数 | |
 | fail            | function  | 否        | 接口调用失败的回调函数 | |
@@ -83,3 +83,26 @@ this.$api.[apiName]
 ---
 
 ##### downloadFile
+下载文件资源到本地
+
+``` this.$api.uploadFile(obj) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| url             | string    | 是        | 下载资源的 url | |
+| header          | Object    | 否        | HTTP 请求的 Header | |
+| filePath        | string    | 否        | 指定文件下载后存储的路径 | 百度、支付宝不支持|
+| success         | function  | 否        | 接口调用成功的回调函数 | |
+| fail            | function  | 否        | 接口调用失败的回调函数 | |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | |
+
+**success 返回：**
+
+| 属性            | 类型       | 说明 | 多端差异 |
+| ------          | ------    | ------ | ------ |
+| tempFilePath    | String    | 临时文件路径 | |
+| statusCode      | number    | 开发者服务器返回的 HTTP 状态码 | 支付宝不支持 |
+
+---
