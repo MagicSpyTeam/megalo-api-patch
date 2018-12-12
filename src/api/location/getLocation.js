@@ -30,7 +30,23 @@ const getLocation = ({cacheTimeout, aliType, type, altitude, success, fail, comp
         return my.getLocation(dealObjectValue({
             cacheTimeout,
             type: aliType,
-            success,
+            success: ({longitude, latitude, accuracy, horizontalAccuracy, country, countryCode, province, city, cityAdcode, district, districtAdcode, streetNumber, pois}) => {
+                success(dealObjectValue({
+                    longitude,
+                    latitude,
+                    accuracy,
+                    horizontalAccuracy,
+                    country,
+                    countryCode,
+                    province,
+                    city,
+                    cityCode: cityAdcode,
+                    district,
+                    districtCode: districtAdcode,
+                    streetNumber,
+                    pois
+                }));
+            },
             fail,
             complete
         }));

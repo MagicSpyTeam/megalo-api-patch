@@ -290,34 +290,101 @@ clearStorage 的同步版本
 ## 位置
 ### 获取位置
 #### getLocation
+获取当前的地理位置
+
+``` this.$api.getLocation(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| type            | string    | 否        | wgs84 返回 gps 坐标，gcj02 返回可用于 openLocation 的坐标 | 支付宝不支持 |
+| altitude        | string    | 否        | 传入 true 会返回高度信息，由于获取高度需要较高精确度，会减慢接口返回速度 | 支付宝不支持 |
+| cacheTimeout    | Number    | 否        | 支付宝客户端经纬度定位缓存过期时间 | 微信、百度不支持 |
+| aliType         | Number    | 否        | 0：默认，获取经纬度 1：获取经纬度和详细到区县级别的逆地理编码数据 2：获取经纬度和详细到街道级别的逆地理编码数据，不推荐使用 3：获取经纬度和详细到POI级别的逆地理编码数据，不推荐使用 | 微信、百度不支持 |
+| success         | function  | 否        | 接口调用成功的回调函数 | |
+| fail            | function  | 否        | 接口调用失败的回调函数 | |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | |
+
+**success 返回：**
+
+| 属性              | 类型       | 说明 | 多端差异 |
+| ------            | ------    | ------ | ------ |
+| latitude          | number    | 纬度，范围为 -90~90，负数表示南纬 | |
+| longitude         | number    | 经度，范围为 -180~180，负数表示西经 |  |
+| speed             | number    | 速度，单位 m/s | 支付宝不支持 |
+| accuracy          | number    | 位置的精确度 |  |
+| altitude          | number    | 高度，单位 m | 支付宝不支持 |
+| verticalAccuracy  | number    | 垂直精度，单位 m（Android 无法获取，返回 0） | 支付宝不支持 |
+| horizontalAccuracy| number    | 水平精度，单位 m |  |
+| street            | string    | 街道名称 | 微信、支付宝不支持 |
+| cityCode          | string    | 城市编码 | 微信不支持 |
+| city              | string    | 城市名称 | 微信不支持 |
+| country           | string    | 国家 | 微信不支持 |
+| province          | string    | 省份 | 微信不支持 |
+| streetNumber      | string    | 街道号码 | 微信不支持 |
+| district          | string    | 区 | 微信不支持 |
+| countryCode       | string    | 区 | 微信、百度不支持 |
+| districtCode    | string    | 区 | 微信、百度不支持 |
+| pois              | string    | 区 | 微信、百度不支持 |
+
+---
 
 ## 设备
 ### 系统信息
+
 #### getSystemInfo
+---
+
 #### getSystemInfoSync
+---
 
 ### 拨打电话
+
 #### makePhoneCall
+---
 
 ### 扫码
+
 #### scanCode
+---
 
 ## 界面
 ### 交互反馈
+
 #### showToast
+---
+
 #### showLoading
+---
+
 #### hideToast
+---
+
 #### hideLoading
+---
+
 #### showModal
+---
 
 ### 设置导航条
+
 #### setNavigationBar
+---
+
 #### setNavigationBarTitle
+---
+
 #### setNavigationBarColor
+---
 
 ### 位置
+
 #### pageScrollTo
+---
 
 ## 开放接口
 ### 登录
+
 #### login
+---
