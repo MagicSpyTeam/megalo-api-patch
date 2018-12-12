@@ -591,4 +591,26 @@ getSystemInfo 的同步版本
 ### 登录
 
 #### login
+调用接口获取登录凭证
+
+``` this.$api.login(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型             | 必填      | 说明 | 多端差异 |
+| ------          | ------          | ------    | ------ | ------ |
+| timeout         | number          | 否        | 超时时间，单位ms | 支付宝不支持 |
+| scopes          | String/Array    | 否        | 授权类型，默认 auth_base。支持 auth_base（静默授权）/ auth_user（主动授权） / auth_zhima（芝麻信用） | 微信、百度不支持 |
+| success         | function        | 否        | 接口调用成功的回调函数 | |
+| fail            | function        | 否        | 接口调用失败的回调函数 | |
+| complete        | function        | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | |
+
+**success 返回：**
+
+| 属性            | 类型        | 说明 | 多端差异 |
+| ------          | ------     | ------ | ------ |
+| code            | string     | 用户登录凭证(微信、百度的 code，支付宝的 authCode) | |
+| authErrorScope  | Key-Value  | 失败的授权类型，key是授权失败的 scope，value 是对应的错误码 | 微信、百度不支持 |
+| authSucessScope | Array      | 成功的授权 scope | 微信、百度不支持 |
+
 ---

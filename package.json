@@ -1,6 +1,6 @@
 {
   "name": "megalo-api-patch",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "在 megalo 中使用统一的小程序 API 写法",
   "main": "dist/index.js",
   "files": [
