@@ -2,7 +2,7 @@
 > 在 [megalo](https://github.com/kaola-fed/megalo) 中使用统一的小程序 API 写法, 可自动转换为对应小程序的API写法。
 
 ## 开发中...
-![Progress](http://progressed.io/bar/16?title=26%2F166)
+![Progress](http://progressed.io/bar/16?title=28%2F166)
 
 ## 安装
 ``` bash
@@ -139,7 +139,7 @@ this.$api.[apiName]
 - [ ] stopCompass
 
 #### 拨打电话
-- [ ] makePhoneCall
+- [x] makePhoneCall
 
 #### 扫码
 - [ ] scanCode
@@ -248,7 +248,7 @@ this.$api.[apiName]
 - [ ] createAnimation
 
 #### 位置
-- [ ] pageScrollTo
+- [x] pageScrollTo
 
 #### 绘图
 - [ ] createCanvasContext
