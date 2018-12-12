@@ -450,6 +450,21 @@ getSystemInfo 的同步版本
 ---
 
 #### showLoading
+显示 loading 提示框
+
+``` this.$api.showLoading(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| title           | string    | 否        | 提示的内容	 |  |
+| delay           | Number    | 否        | 延迟显示，单位 ms，默认 0	 | 微信、百度不支持 |
+| mask            | boolean   | 否        | 是否显示透明蒙层，防止触摸穿透 | 支付宝不支持 |
+| success         | function  | 否        | 接口调用成功的回调函数 | |
+| fail            | function  | 否        | 接口调用失败的回调函数 | |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | |
+
 ---
 
 #### hideToast
