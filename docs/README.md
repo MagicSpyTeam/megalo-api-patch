@@ -429,6 +429,23 @@ getSystemInfo 的同步版本
 ### 交互反馈
 
 #### showToast
+显示消息提示框
+
+``` this.$api.showToast(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| title           | string    | 是        | 提示的内容	 |  |
+| type            | string    | 否        | toast 类型，展示相应图标，默认 none，支持 success / fail / exception / none | 微信、百度不支持 |
+| icon            | string    | 否        | 图标 | 支付宝不支持 |
+| image           | string    | 否        | 自定义图标的本地路径，image 的优先级高于 icon | 支付宝不支持 |
+| duration        | number    | 否        | 提示的延迟时间 |  |
+| mask            | boolean   | 否        | 是否显示透明蒙层，防止触摸穿透 | 支付宝不支持 |
+| success         | function  | 否        | 接口调用成功的回调函数 | |
+| fail            | function  | 否        | 接口调用失败的回调函数 | |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | |
 
 ---
 
