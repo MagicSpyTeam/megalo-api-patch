@@ -372,11 +372,28 @@ clearStorage 的同步版本
 ---
 
 #### getSystemInfoSync
+
+getSystemInfo 的同步版本
+
+``` this.$api.getSystemInfoSync() ```
+
 ---
 
 ### 拨打电话
 
 #### makePhoneCall
+拨打电话
+``` this.$api.makePhoneCall(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| phoneNumber     | string    | 是        | 需要拨打的电话号码 | |
+| success         | function  | 否        | 接口调用成功的回调函数 | 支付宝不支持 |
+| fail            | function  | 否        | 接口调用失败的回调函数 | 支付宝不支持 |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | 支付宝不支持 |
+
 ---
 
 ### 扫码
