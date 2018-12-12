@@ -471,12 +471,14 @@ getSystemInfo 的同步版本
 隐藏消息提示框
 
 ``` this.$api.hideToast() ```
+
 ---
 
 #### hideLoading
 隐藏 loading 提示框
 
 ``` this.$api.hideLoading() ```
+
 ---
 
 #### showModal
@@ -511,17 +513,78 @@ getSystemInfo 的同步版本
 ### 设置导航条
 
 #### setNavigationBar
+动态设置当前页面的标题和颜色
+
+``` this.$api.setNavigationBar(Object object) ```
+
+**obj 入参：**
+
+| 属性              | 类型       | 必填      | 说明 | 多端差异 |
+| ------            | ------    | ------    | ------ | ------ |
+| title             | string    | 否        | 页面标题 | |
+| image             | string    | 否        | 图片连接地址，必须是https，请使用3x高清图片。若设置了image则title参数失效 | 微信、百度不支持 |
+| backgroundColor   | string    | 否        | 导航栏背景色，支持十六进制颜色值 | |
+| borderBottomColor | string    | 否        | 导航栏底部边框颜色 | 微信、百度不支持 |
+| frontColor        | string    | 否        | 前景颜色值 | 支付宝不支持 |
+| animation         | string    | 否        | 动画效果 | 支付宝不支持 |
+| reset             | string    | 否        | 是否重置导航栏为支付宝默认配色 | 微信、百度不支持 |
+| success           | function  | 否        | 接口调用成功的回调函数 | 微信、百度不支持 |
+| fail              | function  | 否        | 接口调用失败的回调函数 | 微信、百度不支持 |
+| complete          | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | 微信、百度不支持 |
+
 ---
 
 #### setNavigationBarTitle
+动态设置当前页面的标题 **(支付宝中会和 setNavigationBarColor 互相覆盖)**
+
+``` this.$api.setNavigationBar(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| title           | string    | 是        | 页面标题 | |
+| success         | function  | 否        | 接口调用成功的回调函数 | |
+| fail            | function  | 否        | 接口调用失败的回调函数 | |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | |
+
 ---
 
 #### setNavigationBarColor
+设置页面导航条颜色 **(支付宝中会和 setNavigationBarTitle 互相覆盖)**
+
+``` this.$api.setNavigationBarColor(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| frontColor      | string    | 是        | 前景颜色值，包括按钮、标题、状态栏的颜色，仅支持 #ffffff 和 #000000 | 支付宝不支持 |
+| backgroundColor | string    | 是        | 背景颜色值，有效值为十六进制颜色 | |
+| animation       | Object    | 是        | 动画效果 | 支付宝不支持 |
+| success         | function  | 否        | 接口调用成功的回调函数 | |
+| fail            | function  | 否        | 接口调用失败的回调函数 | |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | |
+
 ---
 
 ### 位置
 
 #### pageScrollTo
+将页面滚动到目标位置
+
+``` this.$api.pageScrollTo(Object object) ```
+
+**obj 入参：**
+
+| 属性            | 类型       | 必填      | 说明 | 多端差异 |
+| ------          | ------    | ------    | ------ | ------ |
+| scrollTop       | number    | 是        | 滚动到页面的目标位置 |  |
+| duration        | number    | 是        | 滚动动画的时长 | 支付宝不支持 |
+| success         | function  | 否        | 接口调用成功的回调函数 | 支付宝不支持 |
+| fail            | function  | 否        | 接口调用失败的回调函数 | 支付宝不支持 |
+| complete        | function  | 否        | 接口调用结束的回调函数（调用成功、失败都会执行） | 支付宝不支持 |
+
 ---
 
 ## 开放接口
