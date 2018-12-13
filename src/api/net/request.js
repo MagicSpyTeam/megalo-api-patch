@@ -51,7 +51,6 @@ const request = ({url, data, header, method, timeout, dataType, responseType, su
             complete
         }));
     }
-
 };
 
 export default request;
