@@ -287,7 +287,7 @@ this.$api.[apiName]
 - [ ] requestPayment
 
 #### 用户信息
-- [ ] getUserInfo
+- [x] getUserInfo
 
 #### 微信运动
 - [ ] getWeRunData
